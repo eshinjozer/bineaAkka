@@ -204,6 +204,9 @@ $(document).ready(function(){
             } else {
                 $('#back-to-top').fadeOut();
             }
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+              $('#back-to-top').fadeOut();
+            }
         });
         // scroll body to 0px on click
         $('#back-to-top').click(function () {
@@ -213,7 +216,7 @@ $(document).ready(function(){
             }, 800);
             return false;
         });
-        
+
         $('#back-to-top').tooltip('show');
 
 
