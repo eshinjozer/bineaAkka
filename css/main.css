@@ -504,7 +504,7 @@ figure figcaption p {
   font-size: 13px;
   margin-bottom: 0;
   margin-top: 10px;
-  z-index: 1000;
+  z-index: 10000000000;
 }
 #footer .copyright a {
   color: #02bdd5;
