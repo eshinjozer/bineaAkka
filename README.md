@@ -1,2 +1,0 @@
-# bineaAkka
-Wedding Website
