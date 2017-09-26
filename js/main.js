@@ -104,6 +104,24 @@ $(document).ready(function () {
     navigateDiv('#callActionClick','#call-to-action');
     navigateDiv('#featureClick','#feature');
 
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
 });
 
 function navigateDiv(clickDiv,targetDiv) {
@@ -128,6 +146,7 @@ $(document).ready(function () {
         instance = $(this);
         if(name != '' && message != '') {
             $(this).html('Processing');
+            //toastr.info('Processing..Please wait');
             $.ajax({
                 url: "http://kingstoneducation.net/inv.php",
                 data: {'name' : name, 'message' : message},
@@ -136,11 +155,13 @@ $(document).ready(function () {
                     instance.html('Submit Wishes');
                     if(result.status == true) {
                         $('#couroselItems').data('owlCarousel').addItem('<div class="item"><div class="itemContent"><p class="wishesTitle">'+name+'</p><p class="wishesDesc">'+message+'</p></div></div>', 0);
-                        $('#snackbar').html(result.message+'..<span class="closeSpan">x</span>').css('background','green');
+                        //$('#snackbar').html(result.message+'..<span class="closeSpan">x</span>').css('background','green');
+                        toastr.success(result.message);
                     } else {
-                        $('#snackbar').html(result.message+'..<span class="closeSpan">x</span>').css('background','red');
+                       // $('#snackbar').html(result.message+'..<span class="closeSpan">x</span>').css('background','red');
+                       toastr.error(result.message);
                     }
-                    snackbar();
+                    //snackbar();
                 },
                 error: function(jqXHR, exception) {
                     instance.html('Submit Wishes');
@@ -150,8 +171,9 @@ $(document).ready(function () {
             });
             
         } else {
-            $('#snackbar').html('Please enter your name and wishes..<span class="closeSpan">x</span>').css('background','red');
-            snackbar();
+            //$('#snackbar').html('Please enter your name and wishes..<span class="closeSpan">x</span>').css('background','red');
+            //snackbar();
+            toastr.error('Please enter your name and wishes..');
         }
 
     });
