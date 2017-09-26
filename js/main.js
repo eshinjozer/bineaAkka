@@ -125,14 +125,15 @@ $(document).ready(function () {
     $('#contact-submit').click(function() { 
         name = $('#name').val().trim();
         message = $('#message').val().trim();
-
+        instance = $(this);
         if(name != '' && message != '') {
+            $(this).html('Processing');
             $.ajax({
                 url: "http://kingstoneducation.net/inv.php",
                 data: {'name' : name, 'message' : message},
                 dataType : 'json',
                 success: function(result){
-
+                    instance.html('Submit Wishes');
                     if(result.status == true) {
                         $('#couroselItems').data('owlCarousel').addItem('<div class="item"><div class="itemContent"><p class="wishesTitle">'+name+'</p><p class="wishesDesc">'+message+'</p></div></div>', 0);
                         $('#snackbar').html(result.message+'..<span class="closeSpan">x</span>').css('background','green');
@@ -142,8 +143,7 @@ $(document).ready(function () {
                     snackbar();
                 },
                 error: function(jqXHR, exception) {
-                    console.log(jqXHR);
-                    console.log(exception);
+                    instance.html('Submit Wishes');
                     $('#snackbar').html('Something went wrong..Try again after refreshing the page..<span class="closeSpan">x</span>').css('background','red');
                     snackbar();
                 }
