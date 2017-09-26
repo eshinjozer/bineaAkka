@@ -1189,8 +1189,8 @@ However, delay the fade out process for 2.5 seconds */
   margin-left: 40px; 
 }
 .mapsRow {
-  height: 530px;
-  max-height: 530px;
+  height: 520px;
+  max-height: 520px;
 }
 .maps {
     width: 48%;
@@ -1287,7 +1287,13 @@ However, delay the fade out process for 2.5 seconds */
   .counterItems {
     width: 22%;
   }
+  #hero-area {
+    background: #eee !important
+    background-image : none;
+  }
 }
+
+
 
 
 

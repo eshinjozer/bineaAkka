@@ -141,7 +141,9 @@ $(document).ready(function () {
                     }
                     snackbar();
                 },
-                error: function() {
+                error: function(jqXHR, exception) {
+                    console.log(jqXHR);
+                    console.log(exception);
                     $('#snackbar').html('Something went wrong..Try again after refreshing the page..<span class="closeSpan">x</span>').css('background','red');
                     snackbar();
                 }
