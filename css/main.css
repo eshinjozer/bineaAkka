@@ -1227,7 +1227,8 @@ However, delay the fade out process for 2.5 seconds */
 
 .item {
    display: table;
-   height: 150px;
+   height: 200px;
+   min-height: 200;
    border: 5px solid #02bdd5;
    background: url('../images/Plain-Sky-Blue-Background11.jpg');
    width: 100%;

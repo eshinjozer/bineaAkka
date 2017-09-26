@@ -203,6 +203,8 @@ $(document).ready(function () {
                     autoPlay : 4000, 
                     pagination: false,
                     navigation:true,
+                    responsiveClass: false,
+                    responsive: false,
                     navigationText: [
                        "<i class='glyphicon glyphicon-chevron-left'></i>",
                        "<i class='glyphicon glyphicon-chevron-right'></i>"
@@ -222,6 +224,8 @@ $(document).ready(function () {
                     autoPlay : 4000, 
                     pagination: false,
                     navigation:true,
+                    responsiveClass: false,
+                    responsive: false,
                     navigationText: [
                        "<i class='glyphicon glyphicon-chevron-left'></i>",
                        "<i class='glyphicon glyphicon-chevron-right'></i>"
