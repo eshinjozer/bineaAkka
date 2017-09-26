@@ -293,5 +293,13 @@ var x = setInterval(function() {
     }
 }, 1000);
 
+
+$('.navbar-collapse.navbar-right ul li').click(function() {
+  if($('.navbar-collapse.navbar-right').hasClass('in') == true) {
+    $('.navbar-collapse.navbar-right').removeClass('in')
+  }
+});
+
+
 });
 

@@ -1297,6 +1297,10 @@ However, delay the fade out process for 2.5 seconds */
     background: #eee !important
     background-image : none;
   }
+.item {
+   height: 300px;
+   min-height: 300;
+   }
 }
 
 
