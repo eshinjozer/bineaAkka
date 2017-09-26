@@ -194,7 +194,21 @@ $(document).ready(function () {
                 $(result.data).each(function(i, value){
                         items += '<div class="item"><div class="itemContent"><p class="wishesTitle">'+value[0]+'</p><p class="wishesDesc">'+value[1]+'</p></div></div>';
                 });
-
+                $('#couroselItems').html(items);
+                $('.owl-carousel').owlCarousel({
+                    loop:true,
+                    margin:10,
+                    items : 1,
+                    loop : true,
+                    autoPlay : 4000, 
+                    pagination: false,
+                    navigation:true,
+                    navigationText: [
+                       "<i class='glyphicon glyphicon-chevron-left'></i>",
+                       "<i class='glyphicon glyphicon-chevron-right'></i>"
+                    ],
+                    stopOnHover : true
+                });
                 
             } else {
                 items = '<div class="item"><div class="itemContent"><p class="wishesTitle">Eshin Jozer</p><p class="wishesDesc">Happy Married Life Akka :)</p></div></div>';            
