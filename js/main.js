@@ -145,7 +145,7 @@ $(document).ready(function () {
         message = $('#message').val().trim();
         instance = $(this);
         if(name != '' && message != '') {
-            $(this).html('Processing');
+            instance.html('Processing');
             //toastr.info('Processing..Please wait');
             $.ajax({
                 url: "http://kingstoneducation.net/inv.php",
