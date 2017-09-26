@@ -188,11 +188,16 @@ $(document).ready(function () {
         url: "http://kingstoneducation.net/invGet.php",
         dataType : 'json',
         success: function(result){
-            items = "";
+            
             if(result.status == true) {
+                items = "";
                 $(result.data).each(function(i, value){
                         items += '<div class="item"><div class="itemContent"><p class="wishesTitle">'+value[0]+'</p><p class="wishesDesc">'+value[1]+'</p></div></div>';
                 });
+
+                
+            } else {
+                items = '<div class="item"><div class="itemContent"><p class="wishesTitle">Eshin Jozer</p><p class="wishesDesc">Happy Married Life Akka :)</p></div></div>';            
                 $('#couroselItems').html(items);
 
                 $('.owl-carousel').owlCarousel({
@@ -209,9 +214,6 @@ $(document).ready(function () {
                     ],
                     stopOnHover : true
                 });
-                
-            } else {
-                
             }
         },
         error: function() {
