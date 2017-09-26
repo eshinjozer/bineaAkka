@@ -1279,6 +1279,11 @@ However, delay the fade out process for 2.5 seconds */
   font-size: 40px;
 }
 
+.wishesNote {
+	margin-top : 10px;
+	font-style : italic;
+	font-family : monot;
+}
 @media screen and (max-width: 766px) {
   .maps {
     width: 100%;
